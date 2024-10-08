@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '20'  # Stelle sicher, dass dies die unterstützte Version ist
       - run: npm install
       - run: npx quartz build
       - name: Deploy to GitHub Pages

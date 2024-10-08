@@ -13,11 +13,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
+<<<<<<< HEAD
           node-version: '20'
+=======
+          node-version: '20'  # Stelle sicher, dass dies die unterstützte Version ist
+>>>>>>> f5e74181be73290404fff8dc51d3f07c00498fa9
       - run: npm install
       - run: npx quartz build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+<<<<<<< HEAD
           publish_dir: ./public
+=======
+          publish_dir: ./public
+>>>>>>> f5e74181be73290404fff8dc51d3f07c00498fa9

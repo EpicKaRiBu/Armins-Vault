@@ -9,15 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4  # Aktualisiert auf v4 für Stabilität
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3  # Nutze die neueste Version
         with:
-          node-version: '20'  # Stelle sicher, dass dies die unterstützte Version ist
-      - run: npm install
-      - run: npx quartz build
+          node-version: '20'  # Die Version von Node.js, die du nutzen möchtest
+      - run: npm install  # Installiere die benötigten Abhängigkeiten
+      - run: npx quartz build  # Erstelle die Website mit Quartz
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3  # Aktuelle Version von GitHub Pages Deployment
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token für Berechtigungen
+          publish_dir: ./public  # Verzeichnis mit der zu veröffentlichenden Website
